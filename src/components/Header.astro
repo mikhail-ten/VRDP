@@ -1,0 +1,46 @@
+---
+import LanguageSelect from 'virtual:starlight/components/LanguageSelect';
+import SiteTitle from 'virtual:starlight/components/SiteTitle';
+import SocialIcons from 'virtual:starlight/components/SocialIcons';
+---
+
+<div class="header">
+	<div class="title-wrapper sl-flex">
+		<SiteTitle />
+	</div>
+	<div class="sl-hidden md:sl-flex print:hidden right-group">
+		<div class="sl-flex social-icons">
+			<SocialIcons />
+		</div>
+		<LanguageSelect />
+	</div>
+</div>
+
+<style>
+	@layer starlight.core {
+		.header {
+			display: flex;
+			gap: var(--sl-nav-gap);
+			justify-content: space-between;
+			align-items: center;
+			height: 100%;
+		}
+
+		.title-wrapper {
+			overflow: clip;
+			padding: 0.25rem;
+			margin: -0.25rem;
+			min-width: 0;
+		}
+
+		.right-group,
+		.social-icons {
+			gap: 1rem;
+			align-items: center;
+		}
+
+		.social-icons:empty {
+			display: none;
+		}
+	}
+</style>

@@ -1,0 +1,115 @@
+<style is:global>
+	html[data-has-hero] {
+		--sl-content-width: 67.5rem;
+	}
+
+	html[data-has-hero] .hero {
+		display: block;
+		padding-block: clamp(2.5rem, 7vh, 4.5rem) clamp(3rem, 8vh, 5rem);
+	}
+
+	html[data-has-hero] .hero > img,
+	html[data-has-hero] .hero > .hero-html {
+		display: none;
+	}
+
+	html[data-has-hero] .hero .stack,
+	html[data-has-hero] .hero .copy {
+		align-items: center;
+		text-align: center;
+	}
+
+	html[data-has-hero] .hero .copy {
+		gap: 2.7rem;
+	}
+
+	html[data-has-hero] .hero h1 {
+		width: min(100%, 18em);
+		max-width: none;
+		margin-inline: auto;
+		animation: home-hero-rise 1950ms cubic-bezier(0.16, 1, 0.3, 1) both;
+		font-size: 2.85rem;
+		font-weight: 700;
+		letter-spacing: 0;
+		line-height: 1.02;
+		text-wrap: balance;
+	}
+
+	html[data-has-hero] .hero .tagline {
+		width: min(100%, 64rem);
+		max-width: none;
+		margin-inline: auto;
+		color: var(--sl-color-gray-2);
+		font-size: 1.1rem;
+		line-height: 1.65;
+		text-align: start;
+		text-wrap: pretty;
+		animation: home-hero-rise 1950ms cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+	}
+
+	html[data-has-hero] .hero .tagline p {
+		margin: 0;
+	}
+
+	html[data-has-hero] .hero .tagline p + p {
+		margin-top: 1rem;
+	}
+
+	@keyframes home-hero-rise {
+		from {
+			opacity: 0;
+			transform: translateY(4.5rem);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html[data-has-hero] .hero h1,
+		html[data-has-hero] .hero .tagline {
+			animation: none;
+		}
+	}
+
+	@media (min-width: 50rem) {
+		html[data-has-hero] .hero {
+			grid-template-columns: 1fr;
+			padding-block: clamp(3rem, 8vh, 5.25rem) clamp(4rem, 10vh, 6.5rem);
+		}
+
+		html[data-has-hero] .hero .stack,
+		html[data-has-hero] .hero .copy {
+			align-items: center;
+			text-align: center;
+		}
+
+		html[data-has-hero] .hero h1 {
+			width: min(100%, 19em);
+			font-size: 4.25rem;
+		}
+
+		html[data-has-hero] .hero .tagline {
+			width: min(100%, 76rem);
+			font-size: 1.28rem;
+		}
+	}
+
+	@media (min-width: 72rem) {
+		html[data-has-hero] .hero .tagline {
+			width: min(100%, 82rem);
+		}
+	}
+
+	@media (min-width: 72rem) {
+		html[data-has-hero] .hero {
+			padding-block: clamp(3.5rem, 8vh, 5.75rem) clamp(4.5rem, 11vh, 7rem);
+		}
+
+		html[data-has-hero] .hero h1 {
+			font-size: 4.75rem;
+		}
+	}
+</style>

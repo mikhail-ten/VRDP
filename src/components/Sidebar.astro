@@ -1,0 +1,165 @@
+---
+import MobileMenuFooter from 'virtual:starlight/components/MobileMenuFooter';
+import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
+
+const { sidebar } = Astro.locals.starlightRoute;
+---
+
+<SidebarSublist sublist={sidebar} />
+
+<script>
+	const topLevelDetails = Array.from(
+		document.querySelectorAll<HTMLDetailsElement>('#starlight__sidebar .top-level > li > details')
+	);
+	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	const getActiveDetails = () =>
+		topLevelDetails.find((details) => details.querySelector('[aria-current="page"]'));
+
+	const getPanel = (details: HTMLDetailsElement) =>
+		Array.from(details.children).find((child) => child.tagName === 'UL') as HTMLElement | undefined;
+
+	const finishPanel = (details: HTMLDetailsElement, panel: HTMLElement) => {
+		panel.style.height = details.open ? 'auto' : '0px';
+		panel.style.opacity = details.open ? '1' : '0';
+		panel.style.overflow = details.open ? '' : 'hidden';
+		details.dataset.animating = 'false';
+	};
+
+	const openDetails = (details: HTMLDetailsElement) => {
+		const panel = getPanel(details);
+		if (!panel) {
+			details.open = true;
+			return;
+		}
+		if (details.open || details.dataset.animating === 'true') return;
+		if (reducedMotion) {
+			details.open = true;
+			finishPanel(details, panel);
+			return;
+		}
+
+		details.dataset.animating = 'true';
+		details.open = true;
+		panel.style.height = '0px';
+		panel.style.opacity = '0';
+		panel.style.overflow = 'hidden';
+		panel.getBoundingClientRect();
+
+		requestAnimationFrame(() => {
+			panel.style.height = `${panel.scrollHeight}px`;
+			panel.style.opacity = '1';
+		});
+
+		const handleOpenEnd = (event: TransitionEvent) => {
+			if (event.propertyName !== 'height') return;
+			panel.removeEventListener('transitionend', handleOpenEnd);
+			finishPanel(details, panel);
+		};
+		panel.addEventListener('transitionend', handleOpenEnd);
+	};
+
+	const closeDetails = (details: HTMLDetailsElement) => {
+		const panel = getPanel(details);
+		if (!panel) {
+			details.open = false;
+			return;
+		}
+		if (!details.open || details.dataset.animating === 'true') return;
+		if (reducedMotion) {
+			details.open = false;
+			finishPanel(details, panel);
+			return;
+		}
+
+		details.dataset.animating = 'true';
+		panel.style.height = `${panel.scrollHeight}px`;
+		panel.style.opacity = '1';
+		panel.style.overflow = 'hidden';
+		panel.getBoundingClientRect();
+
+		requestAnimationFrame(() => {
+			panel.style.height = '0px';
+			panel.style.opacity = '0';
+		});
+
+		const handleCloseEnd = (event: TransitionEvent) => {
+			if (event.propertyName !== 'height') return;
+			panel.removeEventListener('transitionend', handleCloseEnd);
+			details.open = false;
+			finishPanel(details, panel);
+		};
+		panel.addEventListener('transitionend', handleCloseEnd);
+	};
+
+	const closeSiblingDetails = (openedDetails: HTMLDetailsElement) => {
+		for (const details of topLevelDetails) {
+			if (details !== openedDetails) closeDetails(details);
+		}
+	};
+
+	const activeDetails = getActiveDetails();
+
+	for (const details of topLevelDetails) {
+		const panel = getPanel(details);
+		details.open = details === activeDetails;
+		if (panel) finishPanel(details, panel);
+
+		const summary = Array.from(details.children).find(
+			(child) => child.tagName === 'SUMMARY'
+		) as HTMLElement | undefined;
+
+		summary?.addEventListener('click', (event) => {
+			event.preventDefault();
+			if (details.open) {
+				closeDetails(details);
+			} else {
+				openDetails(details);
+				closeSiblingDetails(details);
+			}
+		});
+	}
+
+	requestAnimationFrame(() => {
+		document.documentElement.classList.add('sidebar-accordion-ready');
+	});
+
+	const desktopSidebarQuery = window.matchMedia('(min-width: 80rem)');
+	const closeMobileSidebarAtDesktop = () => {
+		if (!desktopSidebarQuery.matches) return;
+		const menuButton = document.querySelector<HTMLElement>('starlight-menu-button');
+		menuButton?.setAttribute('aria-expanded', 'false');
+		menuButton?.querySelector('button')?.setAttribute('aria-expanded', 'false');
+		document.body.removeAttribute('data-mobile-menu-expanded');
+		document.querySelectorAll<HTMLElement>('.main-frame, .sl-skip-link').forEach((element) => {
+			element.removeAttribute('inert');
+		});
+	};
+
+	desktopSidebarQuery.addEventListener('change', closeMobileSidebarAtDesktop);
+	closeMobileSidebarAtDesktop();
+</script>
+
+<div class="md:sl-hidden">
+	<MobileMenuFooter />
+</div>
+
+<style is:global>
+	#starlight__sidebar .top-level > li > details > ul {
+		display: block;
+		overflow: hidden;
+		will-change: height, opacity;
+	}
+
+	.sidebar-accordion-ready #starlight__sidebar .top-level > li > details > ul {
+		transition:
+			height 520ms cubic-bezier(0.16, 1, 0.3, 1),
+			opacity 320ms ease;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.sidebar-accordion-ready #starlight__sidebar .top-level > li > details > ul {
+			transition: none;
+		}
+	}
+</style>
