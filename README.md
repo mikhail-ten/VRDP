@@ -39,4 +39,4 @@ Starlight cherche les fichiers `.md` ou `.mdx` dans `src/content/docs/`.
 
 Chaque push sur `main` lance le workflow GitHub Actions dans `.github/workflows/deploy.yml`.
 
-URL prévue : https://mikhail-ten.github.io/vrdp/
+URL prévue : https://mikhail-ten.github.io/VRDP/

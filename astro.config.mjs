@@ -5,7 +5,7 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://mikhail-ten.github.io',
-	base: '/vrdp',
+	base: '/VRDP',
 	integrations: [
 		starlight({
 			title: 'VRDP',
