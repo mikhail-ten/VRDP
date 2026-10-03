@@ -1,0 +1,476 @@
+[
+  {
+    "title": "CONCEPTION",
+    "slug": "conception",
+    "pages": [
+      {
+        "title": "Voirie urbaine",
+        "slug": "voirie-urbaine"
+      },
+      {
+        "title": "Parking",
+        "slug": "parking"
+      },
+      {
+        "title": "Pistes cyclables",
+        "slug": "pistes-cyclables"
+      },
+      {
+        "title": "Parvis",
+        "slug": "parvis"
+      },
+      {
+        "title": "Gare routière",
+        "slug": "gare-routiere"
+      },
+      {
+        "title": "Tramway",
+        "slug": "tramway"
+      },
+      {
+        "title": "Jardin",
+        "slug": "jardin"
+      },
+      {
+        "title": "Rue aux écoles",
+        "slug": "rue-aux-ecoles"
+      },
+      {
+        "title": "Cours oasis",
+        "slug": "cours-oasis"
+      }
+    ]
+  },
+  {
+    "title": "DEMOLITION",
+    "slug": "demolition",
+    "pages": [
+      {
+        "title": "Amiante",
+        "slug": "amiante"
+      }
+    ]
+  },
+  {
+    "title": "TERRASSEMENTS",
+    "slug": "terrassements",
+    "pages": [
+      {
+        "title": "Terrassement généraux",
+        "slug": "terrassement-generaux"
+      },
+      {
+        "title": "Tranchées",
+        "slug": "tranchees"
+      },
+      {
+        "title": "Terres polluées",
+        "slug": "terres-polluees"
+      },
+      {
+        "title": "Géotechnique",
+        "slug": "geotechnique"
+      }
+    ]
+  },
+  {
+    "title": "VOIRIE",
+    "slug": "voirie",
+    "pages": [
+      {
+        "title": "Enrobé",
+        "slug": "enrobe"
+      },
+      {
+        "title": "Asphalte",
+        "slug": "asphalte"
+      },
+      {
+        "title": "Béton",
+        "slug": "beton"
+      },
+      {
+        "title": "Stabilisé",
+        "slug": "stabilise"
+      },
+      {
+        "title": "Pavés",
+        "slug": "paves"
+      },
+      {
+        "title": "Bordures",
+        "slug": "bordures"
+      }
+    ]
+  },
+  {
+    "title": "ASSAINISSEMENT",
+    "slug": "assainissement",
+    "pages": [
+      {
+        "title": "Général",
+        "slug": "general"
+      },
+      {
+        "title": "Eaux pluviales",
+        "slug": "eaux-pluviales"
+      },
+      {
+        "title": "Eaux usées",
+        "slug": "eaux-usees"
+      },
+      {
+        "title": "Eaux usées industrielles",
+        "slug": "eaux-usees-industrielles"
+      }
+    ]
+  },
+  {
+    "title": "RÉSEAUX SECS",
+    "slug": "reseaux-secs",
+    "pages": [
+      {
+        "title": "Réseau ECL",
+        "slug": "reseau-ecl"
+      }
+    ]
+  },
+  {
+    "title": "RÉSEAUX SOUS PRESSION",
+    "slug": "reseaux-sous-pression",
+    "pages": [
+      {
+        "title": "Base théorique",
+        "slug": "base-theorique"
+      }
+    ]
+  },
+  {
+    "title": "GÉNIE CIVIL",
+    "slug": "genie-civil",
+    "pages": [
+      {
+        "title": "Bases théoriques",
+        "slug": "bases-theoriques"
+      }
+    ]
+  },
+  {
+    "title": "ÉTANCHÉITÉ",
+    "slug": "etancheite",
+    "pages": [
+      {
+        "title": "Général",
+        "slug": "general"
+      }
+    ]
+  },
+  {
+    "title": "MOBILIER",
+    "slug": "mobilier",
+    "pages": [
+      {
+        "title": "Général",
+        "slug": "general"
+      }
+    ]
+  },
+  {
+    "title": "SERRURERIE",
+    "slug": "serrurerie",
+    "pages": [
+      {
+        "title": "Général",
+        "slug": "general"
+      }
+    ]
+  },
+  {
+    "title": "SIGNALISATION",
+    "slug": "signalisation",
+    "pages": [
+      {
+        "title": "Marquage au sol",
+        "slug": "marquage-au-sol"
+      },
+      {
+        "title": "Signalisation verticale",
+        "slug": "signalisation-verticale"
+      }
+    ]
+  },
+  {
+    "title": "PLANTATIONS",
+    "slug": "plantations",
+    "pages": [
+      {
+        "title": "Général",
+        "slug": "general"
+      }
+    ]
+  },
+  {
+    "title": "TRAVAUX DE FIN DE CHNATIER",
+    "slug": "travaux-de-fin-de-chnatier",
+    "pages": [
+      {
+        "title": "Général",
+        "slug": "general"
+      }
+    ]
+  },
+  {
+    "title": "PIÈCES GRAPHIQUES",
+    "slug": "pieces-graphiques",
+    "pages": [
+      {
+        "title": "Général",
+        "slug": "general"
+      },
+      {
+        "title": "PLM",
+        "slug": "plm"
+      },
+      {
+        "title": "RSE",
+        "slug": "rse"
+      },
+      {
+        "title": "TRP",
+        "slug": "trp"
+      },
+      {
+        "title": "REV",
+        "slug": "rev"
+      },
+      {
+        "title": "NIV",
+        "slug": "niv"
+      },
+      {
+        "title": "TER",
+        "slug": "ter"
+      },
+      {
+        "title": "RSD",
+        "slug": "rsd"
+      },
+      {
+        "title": "ARR",
+        "slug": "arr"
+      },
+      {
+        "title": "ASS",
+        "slug": "ass"
+      },
+      {
+        "title": "MOB",
+        "slug": "mob"
+      },
+      {
+        "title": "OA",
+        "slug": "oa"
+      },
+      {
+        "title": "PLA",
+        "slug": "pla"
+      },
+      {
+        "title": "SIG",
+        "slug": "sig"
+      },
+      {
+        "title": "Coupes",
+        "slug": "coupes"
+      },
+      {
+        "title": "Carnet de phasage",
+        "slug": "carnet-de-phasage"
+      },
+      {
+        "title": "PIC",
+        "slug": "pic"
+      },
+      {
+        "title": "Import/export IFC",
+        "slug": "import-export-ifc"
+      }
+    ]
+  },
+  {
+    "title": "PIÈCES ÉCRITES",
+    "slug": "pieces-ecrites",
+    "pages": [
+      {
+        "title": "Notice VRD",
+        "slug": "notice-vrd"
+      },
+      {
+        "title": "Notice ASS",
+        "slug": "notice-ass"
+      },
+      {
+        "title": "Estimation VRD",
+        "slug": "estimation-vrd"
+      },
+      {
+        "title": "Bilan carbone",
+        "slug": "bilan-carbone"
+      },
+      {
+        "title": "CCTP",
+        "slug": "cctp"
+      }
+    ]
+  },
+  {
+    "title": "COORDINATION D'ÉTUDES",
+    "slug": "coordination-d-etudes",
+    "pages": [
+      {
+        "title": "Rôle MOE",
+        "slug": "role-moe"
+      },
+      {
+        "title": "Acteurs principaux",
+        "slug": "acteurs-principaux"
+      },
+      {
+        "title": "Export LEA",
+        "slug": "export-lea"
+      },
+      {
+        "title": "BIM",
+        "slug": "bim"
+      }
+    ]
+  },
+  {
+    "title": "ADMINISTRATIF",
+    "slug": "administratif",
+    "pages": [
+      {
+        "title": "Marchés publiques",
+        "slug": "marches-publiques"
+      },
+      {
+        "title": "Appel d'offre",
+        "slug": "appel-d-offre"
+      },
+      {
+        "title": "Permis de construire",
+        "slug": "permis-de-construire"
+      },
+      {
+        "title": "Notice d'assainissement",
+        "slug": "notice-d-assainissement"
+      },
+      {
+        "title": "Demande environnementale",
+        "slug": "demande-environnementale"
+      },
+      {
+        "title": "Dossier loi sur eau",
+        "slug": "dossier-loi-sur-eau"
+      },
+      {
+        "title": "Portée à connaissance ICPE",
+        "slug": "portee-a-connaissance-icpe"
+      }
+    ]
+  },
+  {
+    "title": "ACT",
+    "slug": "act",
+    "pages": [
+      {
+        "title": "Mémoires techniques",
+        "slug": "memoires-techniques"
+      }
+    ]
+  },
+  {
+    "title": "VISA",
+    "slug": "visa",
+    "pages": [
+      {
+        "title": "Général",
+        "slug": "general"
+      }
+    ]
+  },
+  {
+    "title": "SUIVI DE CHANTIER",
+    "slug": "suivi-de-chantier",
+    "pages": [
+      {
+        "title": "Général",
+        "slug": "general"
+      },
+      {
+        "title": "EXE1 Ordre de service",
+        "slug": "exe1-ordre-de-service"
+      },
+      {
+        "title": "EXE1-T OS pour les marchés de travaux",
+        "slug": "exe1-t-os-pour-les-marches-de-travaux"
+      },
+      {
+        "title": "EXE2 Bon de commande",
+        "slug": "exe2-bon-de-commande"
+      },
+      {
+        "title": "EXE3 Admission des fournitures courantes",
+        "slug": "exe3-admission-des-fournitures-courantes"
+      },
+      {
+        "title": "EXE4 PV préalables à la réception",
+        "slug": "exe4-pv-prealables-a-la-reception"
+      },
+      {
+        "title": "EXE5 Proposition de réception",
+        "slug": "exe5-proposition-de-reception"
+      },
+      {
+        "title": "EXE6 Décision de réception",
+        "slug": "exe6-decision-de-reception"
+      },
+      {
+        "title": "EXE7 Décision de non-réception",
+        "slug": "exe7-decision-de-non-reception"
+      },
+      {
+        "title": "EXE8 PV de levée des réserves",
+        "slug": "exe8-pv-de-levee-des-reserves"
+      },
+      {
+        "title": "EXE9 Levée des réserves",
+        "slug": "exe9-levee-des-reserves"
+      },
+      {
+        "title": "EXE10 Avenant",
+        "slug": "exe10-avenant"
+      },
+      {
+        "title": "EXE11 Rapport de présentation d’un avenant",
+        "slug": "exe11-rapport-de-presentation-dun-avenant"
+      },
+      {
+        "title": "EXE12 Décision de reconduction",
+        "slug": "exe12-decision-de-reconduction"
+      },
+      {
+        "title": "EXE13 Décompte des pénalités de retard",
+        "slug": "exe13-decompte-des-penalites-de-retard"
+      },
+      {
+        "title": "EXE14 Mise en demeure",
+        "slug": "exe14-mise-en-demeure"
+      },
+      {
+        "title": "EXE15 Décision de résiliation",
+        "slug": "exe15-decision-de-resiliation"
+      }
+    ]
+  }
+]
