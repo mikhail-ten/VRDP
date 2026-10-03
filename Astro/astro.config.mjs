@@ -12,8 +12,10 @@ export default defineConfig({
 			title: 'VRDP',
 			description: 'Voirie, réseaux divers et paysage.',
 			pagefind: false,
+			pagination: false,
 			customCss: ['./src/styles/starlight.css'],
 			components: {
+				MarkdownContent: './src/components/MarkdownContent.astro',
 				Header: './src/components/Header.astro',
 				Sidebar: './src/components/Sidebar.astro',
 				ThemeProvider: './src/components/LightThemeProvider.astro',

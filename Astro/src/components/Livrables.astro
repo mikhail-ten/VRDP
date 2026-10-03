@@ -1,0 +1,59 @@
+---
+import { typesLivrables, resolveDocumentLink, type Livrable } from '../data/livrables';
+
+interface Props {
+	documents: Livrable[];
+}
+
+const { documents } = Astro.props;
+const groups = Object.entries(typesLivrables).map(([type, category]) => ({
+	type,
+	...category,
+	documents: documents.filter((document) => document.type === type),
+}));
+---
+
+<section class="livrables not-content" aria-label="Livrables">
+	<h2>Livrables</h2>
+	{groups.filter((group) => group.documents.length > 0).map((group) => (
+		<div class="document-group" data-type={group.type}>
+			<h3>
+				{group.label}
+				<span class="count">{group.documents.length}</span>
+			</h3>
+			<ul class="documents">
+				{group.documents.map((document) => (
+					<li class="document">
+						<a class="document-link" href={resolveDocumentLink(document.lien, import.meta.env.BASE_URL)}>
+							<span class="document-title">{document.titre}</span>
+						</a>
+						{document.commentaire && (
+							<p class="comment"><span class="comment-label">Note :</span> {document.commentaire}</p>
+						)}
+					</li>
+				))}
+			</ul>
+		</div>
+	))}
+</section>
+
+<style>
+	h2, h3 { font-family: var(--font-heading); color: var(--brand-ink); line-height: 1.4; }
+	h2 { margin: 0 0 0.75rem; font-size: 1.6rem; }
+	h3 { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.4rem; font-size: 1.1rem; }
+	ul { list-style: none; padding: 0; margin: 0; }
+	[data-type='reglementaire'] { --type-color: #a32525; --type-background: #fff5f5; }
+	[data-type='guide'] { --type-color: #185b88; --type-background: #f2f8fd; }
+	[data-type='rex'] { --type-color: #79500e; --type-background: #fff9ed; }
+	[data-type='divers'] { --type-color: #615674; --type-background: #f8f5fc; }
+	.document-group { margin-top: 1rem; }
+	.count { color: var(--brand-muted); font: 0.85rem var(--font-body); }
+	.documents { border-left: 2px solid var(--type-color); }
+	.document + .document { border-top: 1px solid var(--brand-line); }
+	.document-link { display: block; padding: 0.3rem 0.65rem; color: var(--type-color); font-size: 0.95rem; line-height: 1.4; text-decoration: underline; text-decoration-color: currentColor; }
+	.document-link:hover { background: var(--type-background); }
+	.document-link:focus-visible { outline: 2px solid var(--type-color); outline-offset: -2px; }
+	.document-title { font-weight: 700; overflow-wrap: anywhere; }
+	.comment { margin: 0; padding: 0 0.65rem 0.35rem; color: var(--brand-muted); font-size: 0.85rem; line-height: 1.4; white-space: pre-line; overflow-wrap: anywhere; }
+	.comment-label { font-weight: 700; }
+</style>
