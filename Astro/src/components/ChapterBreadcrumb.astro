@@ -13,7 +13,7 @@ const basePath = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 <nav class="chapter-breadcrumb" aria-label="Fil d’Ariane">
 	<a href={basePath}>Accueil</a>
 	<span aria-hidden="true"> / </span>
-	<a href={`${basePath}${chapter.slug}/`}>{chapter.title}</a>
+	<span>{chapter.title}</span>
 </nav>
 
 <style>

@@ -25,14 +25,15 @@ est une ancienne version et n’est pas utilisée.
 
 Starlight cherche les fichiers `.md` ou `.mdx` dans `src/content/docs/`.
 
-Chaque chapitre possède un sommaire `<chapitre>/index.mdx`. Chaque
-sous-chapitre possède son propre fichier `<chapitre>/<sous-chapitre>.mdx`.
+Les chapitres regroupent les pages dans le menu, sans page de sommaire.
+Les cartes de l’accueil ouvrent le premier sous-chapitre de chaque chapitre.
+Chaque sous-chapitre possède son propre fichier `<chapitre>/<sous-chapitre>.mdx`.
 Remplacer « Contenu à venir. » par le texte souhaité. Les intitulés du classeur
 ont été conservés ; les adresses utilisent des noms sans accents.
 
 `src/data/arborescence.json` définit les titres, les adresses et l’ordre des
-chapitres et sous-chapitres. Il alimente le menu, les cartes de l’accueil et
-les sommaires. Lors d’une modification de structure, mettre à jour ce fichier
+chapitres et sous-chapitres. Il alimente le menu et les cartes de l’accueil.
+Lors d’une modification de structure, mettre à jour ce fichier
 et les pages MDX correspondantes. Il n’est pas synchronisé automatiquement
 avec le classeur.
 

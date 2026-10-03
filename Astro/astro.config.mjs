@@ -30,13 +30,10 @@ export default defineConfig({
 				...chapters.map((chapter) => ({
 					label: chapter.title,
 					collapsed: true,
-					items: [
-						{ label: 'Sommaire', slug: chapter.slug },
-						...chapter.pages.map((page) => ({
-							label: page.title,
-							slug: `${chapter.slug}/${page.slug}`,
-						})),
-					],
+					items: chapter.pages.map((page) => ({
+						label: page.title,
+						slug: `${chapter.slug}/${page.slug}`,
+					})),
 				})),
 			],
 		}),

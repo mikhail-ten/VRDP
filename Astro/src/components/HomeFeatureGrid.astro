@@ -8,7 +8,7 @@ const features = chapters.map((chapter) => ({
     title: chapter.title,
     description: chapter.pages.slice(0, 3).map((page) => page.title).join(' · ') +
         (chapter.pages.length > 3 ? '…' : ''),
-    href: `${basePath}${chapter.slug}/`,
+    href: `${basePath}${chapter.slug}/${chapter.pages[0].slug}/`,
     icon: 'open-book' as const,
     count: chapter.pages.length,
 }));
